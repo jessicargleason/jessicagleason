@@ -1,5 +1,6 @@
 body {
 	background: url(../img/bg.jpg) no-repeat fixed;
+	background-color: #000;
 	background-size: cover;
 	overflow: hidden;
 	color: #fff;
