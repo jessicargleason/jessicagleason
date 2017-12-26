@@ -2,13 +2,13 @@ body {
 	background: url(../img/bg.jpg) no-repeat fixed;
 	background-size: cover;
 	overflow: hidden;
+	color: #fff;
 }
 a:link, a:visited {
 	color: rgba(234,238,255,.8);
 }
 .intro {
 	box-sizing: border-box;
-	color: #fff;
 	padding: 4em 2em;
 	width: 100%;
 	max-width: 700px;
