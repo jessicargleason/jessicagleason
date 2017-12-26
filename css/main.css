@@ -6,12 +6,12 @@ body {
 }
 @keyframes fly {
 	from {
-		left: -11vw;
-		top: 50%;
+		left: -7vw;
+		top: 150px;
 	}
 	to {
 		left: 50%;
-		top: -11vw;
+		top: -7vw;
 	}
 }
 body:before {
@@ -20,10 +20,10 @@ body:before {
 	background-size: contain;
 	background-repeat: no-repeat;
 	display: block;
-	width: 11vw;
-	height: 11vw;
+	width: 7vw;
+	height: 7vw;
 	position: absolute;
-	left: -11vw;
+	left: -7vw;
 	animation-delay: 1s;
 	animation-duration: 1s;
 	animation-name: fly;
@@ -31,7 +31,7 @@ body:before {
 	animation-fill-mode: forwards;
 }
 a:link, a:visited {
-	color: rgba(255,221,85,1);
+	color: rgba(255,233,143,1);
 }
 .intro {
 	box-sizing: border-box;
@@ -88,13 +88,12 @@ a:link, a:visited {
 .button {
 	display: inline-block;
 	padding: 5px 10px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 5px;
 	text-decoration: none;
 	border-radius: 3px;
 	border: 1px dashed #000;
 	font-size: 1.2em;
-	background-color: rgba(255,221,85,1);
+	background-color: rgba(255,233,143,1);
 }
 .button:link, .button:visited {
 	color: #000;
