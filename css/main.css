@@ -1,52 +1,146 @@
 body {
 	background: url(../img/bg.jpg) no-repeat fixed;
 	background-size: cover;
+	overflow: hidden;
 }
 a:link, a:visited {
-	color: #e1f7ff;
+	color: rgba(234,238,255,.8);
 }
 .intro {
 	box-sizing: border-box;
 	color: #fff;
 	padding: 4em 2em;
 	width: 100%;
-	max-width: 600px;
+	max-width: 700px;
 	margin: auto;
+	position: absolute;
+
+	font-family: 'Play', sans-serif;
+	margin-bottom: 120px;
 }
-.portrait {
-	width: 200px;
-	margin: 1em;
-	display: block;
-	float: left;
+
+.intro:before {
+		content: ' ';
+		background-image: url('../img/computer.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		display: block;
+		animation-duration: 2s;
+		animation-name: float;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		width: 134px;
+		height: 117px;
+		bottom: -120px;
+		left: 50%;
+		margin-left: -67px;
+	}
+@keyframes float {
+  from {
+	margin-bottom: 0;
+  }
+  to {
+	 margin-bottom: 20px;
+  }
+  
 }
-.social-container {
-	background-color: rgba(255,255,255,.2);
-	width: 100%;
+
+@keyframes floatAlt {
+	from {
+		margin-bottom: 20px;
+	}
+	to {
+		margin-bottom: 0;
+	}
 }
-.social {
-	padding: 1em;
-	max-width: 600px;
-	margin: 0 auto;
+.button-container {
 	text-align: center;
+	padding-top: 2em;
 }
-.social__links {
-	text-decoration: none;
+.button {
 	display: inline-block;
-	padding: 1em;
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 3px;
+	border: 1px dashed rgba(234,238,255,.8);
+	font-size: 1.2em;
+}
+.button:hover {
+	background-color: rgba(234,238,255,.8);
+	color: #000;
+}
+h1 {
+  font-size: 26px;
 }
 
-.writing {
-	max-width: 600px;
-	padding: 1em;
-	margin: 0 auto;
-	color: #fff;
+p {
+  font-size: 14px;
+  max-width: 37em;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
+@media (min-width: 480px) and (max-width: 1200px) {
+  h1 {
+    font-size: calc( 26px + (40 - 26) * ( (100vw - 480px) / ( 1200 - 480) ));
+  }
+    p {
+    font-size: calc( 14px + (18 - 14) * ( (100vw - 480px) / ( 1200 - 480) ));
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 40px;
+  }
+    p {
+    font-size: 18px;
+  }
 }
 
-li {
-	margin: 1em;
+@media (min-width: 1000px) {
+	.intro {
+		margin-bottom: 0;
+		top: 30%;
+		left: 40%;
+		transform: translate(-40%, -30%);
+	}
+	.intro:before {
+		left: -7vw;
+		bottom: 0;
+		width: 8vw;
+		max-width: 155px;
+		height: 7vw;
+		margin-left: 0;
+	}
+
+	.intro:after {
+		content: ' ';
+		background-image: url('../img/astronaut.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		right: -25vw;
+		bottom: 0;
+		width: 25vw;
+		max-width: 480px;
+		height: 25vw;
+		animation-duration: 2s;
+		animation-name: floatAlt;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
 }
+
+@media (min-width: 2000px) {
+	.intro:before {
+		left: -155px;
+		width: 155px;
+		height: 135px;
+	}
+	.intro:after {
+		right: -480px;
+		width: 480px;
+		height: 480px;
+	}
+}
+
+
