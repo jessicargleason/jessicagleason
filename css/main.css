@@ -2,8 +2,8 @@ body {
 	background: url(../img/bg.jpg) no-repeat fixed;
 	background-color: #000;
 	background-size: cover;
-	overflow: hidden;
 	color: #fff;
+	padding-bottom: 150px;
 }
 @keyframes fly {
 	from {
@@ -25,7 +25,7 @@ body:before {
 	height: 7vw;
 	position: absolute;
 	left: -7vw;
-	animation-delay: 1s;
+	animation-delay: 2s;
 	animation-duration: 1s;
 	animation-name: fly;
 	animation-iteration-count: 1;
@@ -36,14 +36,13 @@ a:link, a:visited {
 }
 .intro {
 	box-sizing: border-box;
-	padding: 4em 2em;
+	padding: 2em;
 	width: 100%;
 	max-width: 700px;
 	margin: auto;
-	position: absolute;
-
+	position: relative;
+	
 	font-family: 'Play', sans-serif;
-	margin-bottom: 120px;
 }
 
 .intro:before {
@@ -131,7 +130,12 @@ p {
 }
 
 @media (min-width: 1000px) {
+	body {
+		overflow-x: hidden;
+	}
 	.intro {
+		position: absolute;
+		padding: 4em 2em;
 		margin-bottom: 0;
 		top: 30%;
 		left: 40%;
