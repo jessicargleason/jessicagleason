@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/jessicargleason/jessicagleason#readme",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "autoprefixer": "^9.4.6",
+    "cssnano": "^4.1.8",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
