@@ -1,10 +1,18 @@
 @import "normalize";
+
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
 @keyframes sea {
 	0% {
 		background-position: 0 0;
 	}
 	100% {
-		background-position: -600px 0;
+		background-position: -1200px 0;
 	}
 }
 
@@ -25,34 +33,177 @@
 		top: -5px;
 	}
 }
+
+@keyframes border {
+	0% {
+		mask-border-width: 0 0 70px 0;
+	}
+	100% {
+		mask-border-width: 0 0 50px 0;
+	}
+}
+
+@keyframes seahorse {
+	0% {
+		top: 0;
+		left: 0;
+	}
+	25% {
+		left: 10px;
+		top: 25%;
+	}
+	50% {
+		left: 20px;
+		top: 50%;
+	}
+	75% {
+		left: 10px;
+		top: 25%;
+	}
+	100% {
+		left: 0;
+		top: 0;
+	}
+}
+
+@keyframes diver {
+	0% {
+		top: 0;
+	}
+	50% {
+		top: 10px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes fish {
+	0% {
+		margin-top: 0;
+	}
+	50% {
+		margin-top: 5px;
+	}
+	100% {
+		margin-top: 0;
+	}
+}
+
 body {
 	background: url(../img/sea-repeat-xy.jpg) repeat;
 	color: rgb(29, 21, 19);
 	padding: 0;
 	font-family: 'Bree Serif', serif;
-	animation: sea 20s linear infinite;
+	animation: sea 60s linear infinite;
 	background-position: 0 0;
-	font-size: 18px;
+	font-size: 18px; 
+	line-height: 1.4;
 }
 
 header {
 	background: url(../img/sky-repeat-xy.jpg) repeat;
 	animation: sky 60s linear infinite;
+	//animation: border 2s linear infinite;
 	animation-direction: reverse;
 	height: 100vh;
 	overflow: hidden;
 	text-align: center;
+	mask-border: url(../img/wave.svg) 44 repeat;
+	mask-border-width: 0 0 70px 0;
 }
 
 footer {
 	background: url(../img/sand.png) repeat-x;
 	background-position: left bottom;
 	min-height: 190px;
-	height: 25vh;
+	//height: 25vh;
+	padding: 0 15px 25px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: end;
+	@media screen and (min-width: 900px) {
+		grid-template-columns: 25% 50% 25%;
+		align-items: center;
+	}
 }
 
 article {
-	min-height: 75vh;
+	min-height: 80vh;
+	//max-width: 1100px;
+	margin: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5vh;
+}
+
+.grid {
+	display: grid;
+    grid-gap: 30px;
+	grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,auto);
+    @media screen and (min-width: 900px) {
+      grid-template-columns: 1fr minmax(min-content, 300px) minmax(min-content, 300px) minmax(min-content, 300px) 1fr;
+    }
+}
+
+.deco {
+	display: none;
+	position: relative;
+	max-width: 100%;
+	@media screen and (min-width: 900px) {
+		display: block;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+.seahorse {
+	animation: seahorse 6s infinite ease-in-out;
+	position: relative;
+}
+
+.diver {
+	animation: diver 3s infinite ease-in;
+	position: relative;
+}
+
+.fish-1 {
+	position: absolute;
+	right: 0;
+	animation: fish 3s infinite ease-in;
+}
+
+.fish-2 {
+	position: absolute;
+	right: 0;
+	animation: fish 2s infinite ease-in;
+}
+
+@media screen and (min-width: 900px) {
+
+	.col-2 {
+		grid-column-start: 2;
+	}
+
+	.col-3 {
+		grid-column-start: 3;
+	}
+
+	.span-2 {
+		grid-column-end: span 2;
+	}
+
+	.span-3 {
+		grid-column-end: span 3;
+	}
+
+	.row-2 {
+		grid-row: span 2;
+	}
+
 }
 
 a:link {
@@ -69,12 +220,14 @@ a:visited {
 	width: 100%;
 	transform: translateY(-50%);
 	font-size: 1.5em;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 button, .button {
+	display: inline-block;
 	padding: 10px 15px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 5px;
 	border-radius: 5px;
 	border: none;
 	background-color: rgb(0, 112, 163);
@@ -94,7 +247,7 @@ button, .button {
 	
 }
 
-button:hover {
+button:hover, .button:hover {
 	background-color: rgb(0, 143, 209);
 }
 
