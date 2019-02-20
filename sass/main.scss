@@ -1,0 +1,286 @@
+@import "normalize";
+
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
+@keyframes sea {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -1200px 0;
+	}
+}
+
+@keyframes sky {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -800px 0;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		top: -3px;
+	}
+	100% {
+		top: -5px;
+	}
+}
+
+@keyframes border {
+	0% {
+		mask-border-width: 0 0 70px 0;
+	}
+	100% {
+		mask-border-width: 0 0 50px 0;
+	}
+}
+
+@keyframes seahorse {
+	0% {
+		top: 0;
+		left: 0;
+	}
+	25% {
+		left: 10px;
+		top: 25%;
+	}
+	50% {
+		left: 20px;
+		top: 50%;
+	}
+	75% {
+		left: 10px;
+		top: 25%;
+	}
+	100% {
+		left: 0;
+		top: 0;
+	}
+}
+
+@keyframes diver {
+	0% {
+		top: 0;
+	}
+	50% {
+		top: 10px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes fish {
+	0% {
+		margin-top: 0;
+	}
+	50% {
+		margin-top: 5px;
+	}
+	100% {
+		margin-top: 0;
+	}
+}
+
+body {
+	background: url(../img/sea-repeat-xy.jpg) repeat;
+	color: rgb(29, 21, 19);
+	padding: 0;
+	font-family: 'Bree Serif', serif;
+	animation: sea 60s linear infinite;
+	background-position: 0 0;
+	font-size: 18px; 
+	line-height: 1.4;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+a:link {
+	color: #006594;
+	text-decoration: none;
+	border-bottom: 2px dashed #047000;
+}
+
+a:visited {
+	color: #047000;
+}
+
+a:hover, a:active {
+	color: #A74301;
+	border-bottom-color: #A74301;
+}
+
+header {
+	background: url(../img/sky-repeat-xy.jpg) repeat;
+	animation: sky 60s linear infinite;
+	//animation: border 2s linear infinite;
+	animation-direction: reverse;
+	height: 100vh;
+	overflow: hidden;
+	text-align: center;
+	mask-border: url(../img/wave.svg) 44 repeat;
+	mask-border-width: 0 0 70px 0;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+footer {
+	background: url(../img/sand.png) repeat-x;
+	background-position: left bottom;
+	min-height: 190px;
+	//height: 25vh;
+	padding: 0 15px 25px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: flex-end;
+	@media screen and (min-width: 900px) {
+		grid-template-columns: 25% 50% 25%;
+	}
+}
+
+article {
+	min-height: 80vh;
+	//max-width: 1100px;
+	margin: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5vh;
+}
+
+.grid {
+	display: grid;
+    grid-gap: 30px;
+	grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,auto);
+    @media screen and (min-width: 900px) {
+      grid-template-columns: 1fr minmax(min-content, 300px) minmax(min-content, 300px) minmax(min-content, 300px) 1fr;
+    }
+}
+
+.deco {
+	display: none;
+	position: relative;
+	max-width: 100%;
+	@media screen and (min-width: 900px) {
+		display: block;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+.seahorse {
+	animation: seahorse 6s infinite ease-in-out;
+	position: relative;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+.diver {
+	animation: diver 3s infinite ease-in;
+	position: relative;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+.fish-container {
+	/* Make sure absolute positioned fish don't end up on top of text if grid isn't supported */
+	height: 123px;
+}
+
+.fish-1 {
+	position: absolute;
+	right: 0;
+	animation: fish 3s infinite ease-in;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+.fish-2 {
+	position: absolute;
+	right: 0;
+	animation: fish 2s infinite ease-in;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+@media screen and (min-width: 900px) {
+
+	.col-2 {
+		grid-column-start: 2;
+	}
+
+	.col-3 {
+		grid-column-start: 3;
+	}
+
+	.span-2 {
+		grid-column-end: span 2;
+	}
+
+	.span-3 {
+		grid-column-end: span 3;
+	}
+
+	.row-2 {
+		grid-row: span 2;
+	}
+
+}
+
+.intro {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+	font-size: 1.5em;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+button, .button {
+	display: inline-block;
+	padding: 10px 15px;
+	margin: 5px;
+	border-radius: 5px;
+	border: none;
+	background-color: #006594;
+	color: #fff;
+	cursor: pointer;
+	&:link, &:visited {
+		color: #fff;
+		text-decoration: none;
+		border-bottom: none;
+	}
+}
+
+.intro-button:after {
+	content: "\2193";
+	position: relative;
+	animation: bounce .5s ease-in-out infinite;
+	padding-left: 10px;
+	
+}
+
+button:hover, .button:hover {
+	background-color: #007AB3;
+}
+
+ 

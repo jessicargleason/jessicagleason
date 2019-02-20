@@ -1,0 +1,27 @@
+{
+  "name": "jessicagleason",
+  "version": "1.0.0",
+  "description": "Jessica Gleason portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicargleason/jessicagleason.git"
+  },
+  "author": "Jessica Gleason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicargleason/jessicagleason/issues"
+  },
+  "homepage": "https://github.com/jessicargleason/jessicagleason#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.6",
+    "cssnano": "^4.1.8",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
