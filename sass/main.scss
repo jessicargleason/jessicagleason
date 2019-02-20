@@ -21,7 +21,7 @@ html {
 		background-position: 0 0;
 	}
 	100% {
-		background-position: -1200px 0;
+		background-position: -800px 0;
 	}
 }
 
@@ -99,6 +99,24 @@ body {
 	background-position: 0 0;
 	font-size: 18px; 
 	line-height: 1.4;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+a:link {
+	color: #006594;
+	text-decoration: none;
+	border-bottom: 2px dashed #047000;
+}
+
+a:visited {
+	color: #047000;
+}
+
+a:hover, a:active {
+	color: #A74301;
+	border-bottom-color: #A74301;
 }
 
 header {
@@ -111,6 +129,9 @@ header {
 	text-align: center;
 	mask-border: url(../img/wave.svg) 44 repeat;
 	mask-border-width: 0 0 70px 0;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 footer {
@@ -120,9 +141,11 @@ footer {
 	//height: 25vh;
 	padding: 0 15px 25px;
 	text-align: center;
+	display: flex;
+	justify-content: space-between;
 	display: grid;
 	grid-template-columns: 1fr;
-	align-items: end;
+	align-items: flex-end;
 	@media screen and (min-width: 900px) {
 		grid-template-columns: 25% 50% 25%;
 	}
@@ -162,23 +185,40 @@ article {
 .seahorse {
 	animation: seahorse 6s infinite ease-in-out;
 	position: relative;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 .diver {
 	animation: diver 3s infinite ease-in;
 	position: relative;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+}
+
+.fish-container {
+	/* Make sure absolute positioned fish don't end up on top of text if grid isn't supported */
+	height: 123px;
 }
 
 .fish-1 {
 	position: absolute;
 	right: 0;
 	animation: fish 3s infinite ease-in;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 .fish-2 {
 	position: absolute;
 	right: 0;
 	animation: fish 2s infinite ease-in;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 @media screen and (min-width: 900px) {
@@ -205,14 +245,6 @@ article {
 
 }
 
-a:link {
-	color: rgb(0, 112, 163);
-}
-
-a:visited {
-	color: rgb(5, 155, 0);
-}
-
 .intro {
 	position: absolute;
 	top: 50%;
@@ -229,12 +261,13 @@ button, .button {
 	margin: 5px;
 	border-radius: 5px;
 	border: none;
-	background-color: rgb(0, 112, 163);
+	background-color: #006594;
 	color: #fff;
 	cursor: pointer;
 	&:link, &:visited {
 		color: #fff;
 		text-decoration: none;
+		border-bottom: none;
 	}
 }
 
@@ -247,7 +280,7 @@ button, .button {
 }
 
 button:hover, .button:hover {
-	background-color: rgb(0, 143, 209);
+	background-color: #007AB3;
 }
 
  
