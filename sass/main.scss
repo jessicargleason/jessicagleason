@@ -78,18 +78,6 @@ html {
 	}
 }
 
-@keyframes fish {
-	0% {
-		margin-top: 0;
-	}
-	50% {
-		margin-top: 5px;
-	}
-	100% {
-		margin-top: 0;
-	}
-}
-
 body {
 	background: url(../img/sea-repeat-xy.jpg) repeat;
 	color: rgb(29, 21, 19);
@@ -119,6 +107,10 @@ a:hover, a:active {
 	border-bottom-color: #A74301;
 }
 
+h2 {
+	font-size: 1.8em;
+}
+
 header {
 	background: url(../img/sky-repeat-xy.jpg) repeat;
 	animation: sky 60s linear infinite;
@@ -140,14 +132,12 @@ footer {
 	min-height: 190px;
 	//height: 25vh;
 	padding: 0 15px 25px;
-	text-align: center;
 	display: flex;
 	justify-content: space-between;
-	display: grid;
-	grid-template-columns: 1fr;
 	align-items: flex-end;
 	@media screen and (min-width: 900px) {
-		grid-template-columns: 25% 50% 25%;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 }
 
@@ -158,17 +148,13 @@ article {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 5vh;
+	max-width: 1200px;
 }
 
-.grid {
-	display: grid;
-    grid-gap: 30px;
-	grid-template-columns: 1fr;
-    grid-template-rows: repeat(5,auto);
-    @media screen and (min-width: 900px) {
-      grid-template-columns: 1fr minmax(min-content, 300px) minmax(min-content, 300px) minmax(min-content, 300px) 1fr;
-    }
+.flex {
+	display: flex;
 }
+
 
 .deco {
 	display: none;
@@ -185,6 +171,7 @@ article {
 .seahorse {
 	animation: seahorse 6s infinite ease-in-out;
 	position: relative;
+	margin: 15px;
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 	}
@@ -193,56 +180,10 @@ article {
 .diver {
 	animation: diver 3s infinite ease-in;
 	position: relative;
+	margin: 15px;
 	@media (prefers-reduced-motion: reduce) {
 		animation: none;
 	}
-}
-
-.fish-container {
-	/* Make sure absolute positioned fish don't end up on top of text if grid isn't supported */
-	height: 123px;
-}
-
-.fish-1 {
-	position: absolute;
-	right: 0;
-	animation: fish 3s infinite ease-in;
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
-	}
-}
-
-.fish-2 {
-	position: absolute;
-	right: 0;
-	animation: fish 2s infinite ease-in;
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
-	}
-}
-
-@media screen and (min-width: 900px) {
-
-	.col-2 {
-		grid-column-start: 2;
-	}
-
-	.col-3 {
-		grid-column-start: 3;
-	}
-
-	.span-2 {
-		grid-column-end: span 2;
-	}
-
-	.span-3 {
-		grid-column-end: span 3;
-	}
-
-	.row-2 {
-		grid-row: span 2;
-	}
-
 }
 
 .intro {
