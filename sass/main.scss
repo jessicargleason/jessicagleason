@@ -148,7 +148,24 @@ article {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 5vh;
-	max-width: 1200px;
+	max-width: 960px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+	@media screen and (min-width: 768px) {
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: 1fr 1fr;
+	}
+	img {
+		display: block;
+		width: 100px;
+		border-radius: 50%;
+		margin: 15px;
+	}
 }
 
 .flex {
@@ -194,6 +211,10 @@ article {
 	font-size: 1.5em;
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.content {
+	max-width: 35em;
 }
 
 button, .button {
